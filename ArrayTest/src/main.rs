@@ -5,7 +5,8 @@ fn main() {
     let mut input = String::new();
     io::stdin().read_line(&mut input).expect("shut up bitch!");
     let input: usize = input.trim().parse().expect("that shit aint a number");
-    let element = x[input];
+    let y = input - 1;
+    let element = x[y];
     println!("your mf value at index {input} is {element}");
 
 }
