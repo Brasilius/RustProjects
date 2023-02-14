@@ -23,13 +23,26 @@ fn main() {
 }
 
 fn writemusic() {
+    println!("Continue (y/n)");
+    let mut input = String::new();
+    std::io::stdin().read_line(&mut input).expect("failed to read line)");
+loop{
+
+if input.trim().to_lowercase() == "y"{
     println!("Enter the name of the Song you want to save: ");
     let path = "/home/niels/RustProjects/music_storage/Music_Sheet.txt";
     let mut music_to_add = String::new();
     std::io::stdin().read_line(&mut music_to_add).expect("Error reading info");
     let music_push = music_to_add.trim().to_lowercase();
     write(path, music_to_add).expect("failed to write to file");
+break; }
+    else if input.trim().to_lowercase() == "n"{
+        break;
+    }
+    
+}
 }
 fn readmusic() {
     println!("hello world from read!");
 }
+ 
